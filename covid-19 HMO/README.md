@@ -1,119 +1,78 @@
-<div dir="rtl">
+# Covid-19 Patient Management System for Health Insurance Fund
 
-# מאגר קורונה של קופת חולים
+## Overview
+This project is a Covid-19 patient data management system designed for fund members of a large health insurance fund.  
+Each fund member record includes personal details (full name, ID number, address, etc.) along with Covid-19-related data such as infection date (optional), recovery date (optional), and vaccination history.
 
-## סקירה כללית
+## Features
+- Manage fund member record: fetch all fund members, get the full personal details about the fund member, add a fund member, edit and delete.
+- Add and update infection and recovery dates for each fund member.
+- Vaccinations schedule management: add the required vaccinations to a fund member, along with the vaccination date and vaccine manufacturer. Each fund member has a maximum of 4 vaccines.
 
-פרויקט זה משמש כמערכת מאגר נתונים לניהול חברי קופת חולים גדולה בזמן מגיפת הקורונה. <br>
-הרשומה של כל חבר כוללת פרטים אישיים: שם מלא, מספר זהות, מגורים... <br>
-וכן נתוני קורונה עבור החבר: תאריך הידבקות בקורונה (אופציונלי), תאריך החלמה (אופציונלי), ורשימת החיסונים הנדרשים.
+## Use Of Technologies
+- Server side: C# .NET Core
+- Client side: Angular, TypeScript
+- Design libraries: Angular Material
+- Database: SQL Server
 
-
-
-
-## מאפיינים
-
-- ניהול רשומות חברי המחלקה: שליפת כל החברים, פרטים מלאים של חבר, הוספת חבר, עדכון ומחיקה.
-- רשימה ועדכון תאריכי ההדבקה וההחלמה מהקורונה עבור כל חבר.
-- ניהול לוחות חיסונים: הוספת החיסונים הדרושים לחבר קופה בצירוף תאריך החיסון ויצרן החיסון. לכל חבר יש לכל היותר 4 חיסונים.
-
-
-
-## שימוש בטכנולוגיות
-
-- **צד השרת**: C# .NET Core
-- **צד הלקוח**: 17 Angular (שימוש בספריית עיצוב Angular Material)
-- **מסד נתונים**: SQL Server
-
-
-
-## התקנה
-
-ראשית הורד את הקובץ למחשב המקומי שלך על ידי הפקודה הבאה בשורת הפקודה של התיקייה הרצויה:
+## Installation
+First clone the file to your local computer by the following command in the command line of the desired folder:
 ```bash
 git clone https://github.com/shirabiton/Hadasim.git
 ```
-
-
-
-### התקנה בצד השרת:
-
-היכנס לקובץ WebApi->WebApi.sIn ב Visual Studio והתקן את מסד הנתונים על המחשב: <br>
-פתח את package manager console (וודא שאתה נמצא על הפרויקט DataContext) <br>
-והרץ במסוף את הפקודה:
+### Server-side installation:
+1. Open `WebApi.sln` file in Visual Studio.
+2. Open the Package Manager Console (make sure the default project is `DataContext`)
+3. Run the the following command to crate a migration:
 ```bash
 add-migration <migration-name>
 ```
-להוספת מיגרציה חדשה.
-לאחר מכן הרץ את הפקודה:
+4. Update the database:
 ```bash
 update-database
 ```
-כעת אתה מחובר למסד הנתונים 😊<br>
-הרץ את הפרויקט WebApi, בזמן ההרצה ייפתח חלון הרצה בשם Swagger UI.
+5. Run the WebApi project. Swagger UI will be opened automatically.
 
-
-### התקנה בצד הלקוח:
-
-היכנס לשורת הפקודה של התיקייה שנקראת project. והרץ בה את הפקודה:
+### Client-side installation:
+1. Navigate to the `project` folder:
 ```bash
-code .
+   cd project
 ```
-כעת הרץ את הפרויקט על ידי הפקודה בטרמינל:
+2. Install dependencies:
+```bash
+   npm install
+```
+3. Start the Angular development server:
 ```bash
 ng serve
 ```
 
+## Assumptions
+- We assume that each fund member can get sick with Covid-19 at most once
+
+## How to use
+From the home page, clicking on the 'Fund Members' button brings up a list of the full names of all fund members. You can search for a specific fund member by name in the search box. <br>
+We will add a new fund member by clicking on the plus, adding a profile picture to a fund member is optional.<br>
+Clicking on a specific member will bring us to his full details, <br>
+Clicking on the icons at the bottom of the page will allow us to edit a fund member's details, delete a fund member or add vaccinations to him.<br>
+At each stage, clicking on the logo at the top of the page will navigate to the home page.<br>
 
 
-## תלויות חיצוניות
-
-כפי שצויין, פרויקט צד הלקוח תלוי בספרייה Angular Material. יש להתקין את הספרייה על ידי הפקודה:
-```bash
-ng add @angular/material
-```
-או לחילופין, להתקין בקלות כל התקנה שהיא בפרויקט על ידי:
-```bash
-npm install
-```
-
-
-
-## הנחות
-
-- נניח שכל חבר יכול לחלות לכל היותר פעם אחת בקורונה.
-
-
-
-
-## אופן השימוש
-
-מדף הבית לחיצה על הכפתור 'חברי הקופה' מביא לרשימת השמות המלאים של כל חברי הקופה. ניתן לחפש חבר מסויים על פי שם בתיבת החיפוש. <br>
-נוסיף חבר קופה חדש בלחיצה על הפלוס, הוספת תמונת פרופיל לחבר-אופציונלי.<br>
-לחיצה על חבר מסויים תביא אותנו לפרטים המלאים שלו, <br>
-לחיצה על האייקונים בתחתית העמוד תאפשר לנו לערוך פרטי חבר, למחוק חבר או להוסיף לו חיסונים.<br>
-בכל שלב, לחיצה על הלוגו בראש הדף תנווט אל דף הבית.<br>
-
-
-
-## מדריך ויזואלי
-דף הבית:<br><br>
-![דף הבית](screenshots/home.png)
+## A Visual Guide
+Home Page:<br><br>
+![Home Page](screenshots/home.png)
 <br><br>
-רשימת חברי הקופה:<br><br>
-![רשימת חברי הקופה](screenshots/members-list.png)
+List of fund members:<br><br>
+![List of fund members:](screenshots/members-list.png)
+<br><br>Add a fund member:<br><br>
+![Add a fund member](screenshots/add-member.png)
 <br><br>
-הוספת חבר קופה:<br><br>
-![הוספת חבר קופה](screenshots/add-member.png)
+Fund member details:<br><br>
+![Fund member details](screenshots/member-details.png)
 <br><br>
-פרטי חבר קופה:<br><br>
-![פרטי חבר קופה](screenshots/member-details.png)
+Update fund member details:<br><br>
+![Update member details](screenshots/update-member.png)
 <br><br>
-עדכון חבר קופה:<br><br>
-![עדכון חבר קופה](screenshots/update-member.png)
+Adding a vaccine to a fund member:<br><br>
+![Adding a vaccine to a fund member](screenshots/add-vaccine.png)
 <br><br>
-הוספת חיסון לחבר:<br><br>
-![הוספת חיסון לחבר](screenshots/add-vaccine.png)
-<br><br>
-
-
