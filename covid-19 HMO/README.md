@@ -9,7 +9,7 @@ Each fund member record includes personal details (full name, ID number, address
 - Add and update infection and recovery dates for each fund member.
 - vaccines schedule management: add the required vaccines to a fund member, along with the vaccination date and vaccine manufacturer. Each fund member has a maximum of 4 vaccines.
 
-## Use Of Technologies
+## Use of Technologies
 - Server side: C# .NET Core
 - Client side: Angular, TypeScript
 - Design libraries: Angular Material
@@ -20,7 +20,7 @@ First clone the file to your local computer by the following command in the comm
 ```bash
 git clone https://github.com/shirabiton/Hadasim.git
 ```
-### Server-side installation:
+### Server Side Installation:
 1. Open `WebApi.sln` file in Visual Studio.
 2. Open the Package Manager Console (make sure the default project is `DataContext`)
 3. Run the the following command to crate a migration:
@@ -33,7 +33,7 @@ update-database
 ```
 5. Run the WebApi project. Swagger UI will be opened automatically.
 
-### Client-side installation:
+### Client Side Installation:
 1. Navigate to the `project` folder:
 ```bash
    cd project
@@ -50,7 +50,7 @@ ng serve
 ## Assumptions
 - We assume that each fund member can get sick with Covid-19 at most once
 
-## How to use
+## How to Use
 From the home page, clicking on the 'Fund Members' button brings up a list of the full names of all fund members. You can search for a specific fund member by name in the search box. <br>
 We will add a new fund member by clicking on the plus, adding a profile picture to a fund member is optional.<br>
 Clicking on a specific member will bring us to his full details, <br>
