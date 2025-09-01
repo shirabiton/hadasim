@@ -2,12 +2,12 @@
 
 ## Overview
 This project is a Covid-19 patient data management system designed for fund members of a large health insurance fund.  
-Each fund member record includes personal details (full name, ID number, address, etc.) along with Covid-19-related data such as infection date (optional), recovery date (optional), and vaccination history.
+Each fund member record includes personal details (full name, ID number, address, etc.) along with Covid-19-related data such as infection date (optional), recovery date (optional), and vaccine history.
 
 ## Features
 - Manage fund member record: fetch all fund members, get the full personal details about the fund member, add a fund member, edit and delete.
 - Add and update infection and recovery dates for each fund member.
-- Vaccinations schedule management: add the required vaccinations to a fund member, along with the vaccination date and vaccine manufacturer. Each fund member has a maximum of 4 vaccines.
+- vaccines schedule management: add the required vaccines to a fund member, along with the vaccination date and vaccine manufacturer. Each fund member has a maximum of 4 vaccines.
 
 ## Use Of Technologies
 - Server side: C# .NET Core
@@ -62,17 +62,17 @@ At each stage, clicking on the logo at the top of the page will navigate to the 
 Home Page:<br><br>
 ![Home Page](screenshots/home.png)
 <br><br>
-List of fund members:<br><br>
+List of Fund Members:<br><br>
 ![List of fund members:](screenshots/members-list.png)
-<br><br>Add a fund member:<br><br>
+<br><br>Add a Fund Member:<br><br>
 ![Add a fund member](screenshots/add-member.png)
 <br><br>
-Fund member details:<br><br>
+Fund Member Details:<br><br>
 ![Fund member details](screenshots/member-details.png)
 <br><br>
-Update fund member details:<br><br>
+Update Fund Member Details:<br><br>
 ![Update member details](screenshots/update-member.png)
 <br><br>
-Adding a vaccine to a fund member:<br><br>
+Adding a Vaccine to a Fund Member:<br><br>
 ![Adding a vaccine to a fund member](screenshots/add-vaccine.png)
 <br><br>
